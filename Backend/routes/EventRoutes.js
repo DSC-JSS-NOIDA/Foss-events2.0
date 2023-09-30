@@ -110,4 +110,23 @@ router.put('/edit/:title', async (req, res) => {
   })
 })
 
+router.delete('/delete/:id', async (req, res) => {
+
+    try{
+      const id = req.params.id;
+      const deletedEvent = await events.findByIdAndDelete(id);
+
+      res.status(200).send({
+          status: "success",
+          data: deletedEvent,
+          message: "Event Successfully deleted"
+      })
+      
+    }
+    catch(error){
+        res.status(500).json({ error: 'Error in delete subject', error: error });
+    }
+  
+})
+
 module.exports = router;
