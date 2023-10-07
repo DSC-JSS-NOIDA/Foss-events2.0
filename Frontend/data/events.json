@@ -1,186 +1,188 @@
-[
-  {
-    "title": "ACCELERATING DEVELOPMENT AND DEPLOYMENT OF OPEN SOURCE",
-    "website": "www.opensourceindia.in",
-    "start": "19/10/2023",
-    "end": "20/10/2023",
-    "organisation": "Open Source India",
-    "location": "Offline"
-  },
-  {
-    "title": "FOSDEM 2024",
-    "website": "www.fosdem.org/2024/",
-    "start": "03/02/2024",
-    "end": "04/02/2024",
-    "organisation": "FOSDEM dev community at University Brussels (ULB)",
-    "location": "Online"
-  },
-  {
-    "title": "FOSSCOMM",
-    "website": "2023.fosscomm.gr/",
-    "start": "21/10/2023",
-    "end": "22/10/2023",
-    "organisation": "University of Crete",
-    "location": "Offline"
-  },
-  {
-    "title": "DevFest India",
-    "website": "devfestindia.com/",
-    "start": "1/09/2023",
-    "end": "30/10/2021",
-    "organisation": "Google",
-    "location": "Offline"
-  },
-  {
-    "title": "All Things Open",
-    "website": "2023.allthingsopen.org",
-    "start": "15/10/2023",
-    "end": "17/10/2023",
-    "organisation": "All Things Open",
-    "location": "Offline"
-  },
-  {
-    "title": "GIRLSCRIPT SUMMER OF CODE",
-    "website": "gssoc.girlscript.tech/",
-    "start": "14/05/2023",
-    "end": "10/08/2023",
-    "organisation": "GirlScript Foundation",
-    "location": "Online"
-  },
-  {
-    "title": "Google Summer of Code",
-    "website": "summerofcode.withgoogle.com/",
-    "start": "23/01/2023",
-    "end": "13/11/2023",
-    "organisation": "Multiple organisations like FOSSASIA,Redhat,ASF and many more ",
-    "location": "Online"
-  },
-  {
-    "title": "MLH Fellowship",
-    "website": "fellowship.mlh.io/",
-    "start": "18/09/2023",
-    "end": "29/01/2024",
-    "organisation": "Github, Facebook, Dev and many more ",
-    "location": "Online"
-  },
-  {
-    "title": "OUTREACHY",
-    "website": "www.outreachy.org",
-    "start": "07/12/2023",
-    "end": "07/03/2024",
-    "organisation": "The Software Freedom Conservancy",
-    "location": "Remote"
-  },
-  {
-    "title": "24 Pull Requests",
-    "website": "24pullrequests.com",
-    "start": "01/12/2023",
-    "end": "24/12/2023",
-    "organisation": "24 Pull Requests Community",
-    "location": "Online"
-  },
-  {
-    "title": "MOZILLA FESTIVAL",
-    "website": "mozilla.org/moss",
-    "start": "20/03/2023",
-    "end": "24/03/2023",
-    "organisation": "Mozilla",
-    "location": "Online"
-  },
-  {
-    "title": "PROCESSING FOUNDATION FELLOWSHIP PROGRAM",
-    "website": "processingfoundation.org/fellowships",
-    "start": "01/06/2023",
-    "end": "31/08/2023",
-    "organisation": "Processing Foundation",
-    "location": "Online"
-  },
-  {
-    "title": "GOOGLE SEASON OF DOCS",
-    "website": "developers.google.com/season-of-docs/docs/timeline",
-    "start": "18/01/2023",
-    "end": "8/11/2024",
-    "organisation": "Multiple organisations like Apache Airflow,Arduino,CERN-HSF",
-    "location": "Online"
-  },
-  {
-    "title": "Digital Ocean Hacktoberfest",
-    "website": "hacktoberfest.digitalocean.com/",
-    "start": "01/10/2023",
-    "end": "31/10/2023",
-    "organisation": "DigitalOcean, intel, Github, Dev and many more ",
-    "location": "Online"
-  },
-  {
-    "title": "Season of KDE",
-    "website": "season.kde.org/",
-    "start": "15/12/2022",
-    "end": "20/05/2023",
-    "organisation": "KDE Community",
-    "location": "Online"
-  },
-  {
-    "title": "DevOps India Summit 2023",
-    "website": "devopsindiasummit.com/",
-    "start": "17/1/2023",
-    "end": "18/1/2023",
-    "organisation": "Xellentro",
-    "location": "Offline"
-  },
-  {
-    "title": "Google Summer of Earth Engine",
-    "website": "sites.google.com/view/summerofearthengine/home",
-    "start": "15/03/2023",
-    "end": "15/08/2023",
-    "organisation": "Google",
-    "location": "Online"
-  },
-  {
-    "title": "GUADEC",
-    "website": "events.gnome.org/event/101/",
-    "start": "26/07/2023",
-    "end": "31/07/2023",
-    "organisation": "The GNOME Foundation",
-    "location": "Online"
-  },
-  {
-    "title": "SOCIS – The ESA Summer of Code in Space",
-    "website": "www.esa.int/Enabling_Support/Space_Engineering_Technology/SOCIS_The_ESA_Summer_of_Code_in_Space",
-    "start": "01/06/2023",
-    "end": "30/09/2023",
-    "organisation": "European Space Agency",
-    "location": "Online"
-  },
-  {
-    "title": "KWOC",
-    "website": "kwoc.kossiitkgp.org",
-    "start": "25/10/2021",
-    "end": "9/01/2023",
-    "organisation": "KOSS,IIT Kharagpur",
-    "location": "Online"
-  },
-  {
-    "title": "Hyperledger Mentorship Program",
-    "website": "wiki.hyperledger.org/display/INTERN#HyperledgerMentorshipProgram-2023ProgramDates*",
-    "start": "01/02/2023",
-    "end": "30/10/2023",
-    "organisation": "The Linux Foundation",
-    "location": "Online"
-  },
-  {
-    "title": "Delta Winter of Code",
-    "website": "dwoc.io/",
-    "start": "23/10/2023",
-    "end": "29/02/2024",
-    "organisation": "Delta Force, NIT Trichy",
-    "location": "Online"
-  },
-  {
-    "title": "NextJS Conf",
-    "website": "https://nextjs.org/conf",
-    "start": "26/10/2023",
-    "end": "26/10/2023",
-    "organisation": "Vercel",
-    "location": "Online"
-  }
-]
+{
+  "events": [
+    {
+      "title": "ACCELERATING DEVELOPMENT AND DEPLOYMENT OF OPEN SOURCE",
+      "website": "www.opensourceindia.in",
+      "start": "19/10/2023",
+      "end": "20/10/2023",
+      "organisation": "Open Source India",
+      "location": "Offline"
+    },
+    {
+      "title": "FOSDEM 2024",
+      "website": "www.fosdem.org/2024/",
+      "start": "03/02/2024",
+      "end": "04/02/2024",
+      "organisation": "FOSDEM dev community at University Brussels (ULB)",
+      "location": "Online"
+    },
+    {
+      "title": "FOSSCOMM",
+      "website": "2023.fosscomm.gr/",
+      "start": "21/10/2023",
+      "end": "22/10/2023",
+      "organisation": "University of Crete",
+      "location": "Offline"
+    },
+    {
+      "title": "DevFest India",
+      "website": "devfestindia.com/",
+      "start": "1/09/2023",
+      "end": "30/10/2021",
+      "organisation": "Google",
+      "location": "Offline"
+    },
+    {
+      "title": "All Things Open",
+      "website": "2023.allthingsopen.org",
+      "start": "15/10/2023",
+      "end": "17/10/2023",
+      "organisation": "All Things Open",
+      "location": "Offline"
+    },
+    {
+      "title": "GIRLSCRIPT SUMMER OF CODE",
+      "website": "gssoc.girlscript.tech/",
+      "start": "14/05/2023",
+      "end": "10/08/2023",
+      "organisation": "GirlScript Foundation",
+      "location": "Online"
+    },
+    {
+      "title": "Google Summer of Code",
+      "website": "summerofcode.withgoogle.com/",
+      "start": "23/01/2023",
+      "end": "13/11/2023",
+      "organisation": "Multiple organisations like FOSSASIA,Redhat,ASF and many more ",
+      "location": "Online"
+    },
+    {
+      "title": "MLH Fellowship",
+      "website": "fellowship.mlh.io/",
+      "start": "18/09/2023",
+      "end": "29/01/2024",
+      "organisation": "Github, Facebook, Dev and many more ",
+      "location": "Online"
+    },
+    {
+      "title": "OUTREACHY",
+      "website": "www.outreachy.org",
+      "start": "07/12/2023",
+      "end": "07/03/2024",
+      "organisation": "The Software Freedom Conservancy",
+      "location": "Remote"
+    },
+    {
+      "title": "24 Pull Requests",
+      "website": "24pullrequests.com",
+      "start": "01/12/2023",
+      "end": "24/12/2023",
+      "organisation": "24 Pull Requests Community",
+      "location": "Online"
+    },
+    {
+      "title": "MOZILLA FESTIVAL",
+      "website": "mozilla.org/moss",
+      "start": "20/03/2023",
+      "end": "24/03/2023",
+      "organisation": "Mozilla",
+      "location": "Online"
+    },
+    {
+      "title": "PROCESSING FOUNDATION FELLOWSHIP PROGRAM",
+      "website": "processingfoundation.org/fellowships",
+      "start": "01/06/2023",
+      "end": "31/08/2023",
+      "organisation": "Processing Foundation",
+      "location": "Online"
+    },
+    {
+      "title": "GOOGLE SEASON OF DOCS",
+      "website": "developers.google.com/season-of-docs/docs/timeline",
+      "start": "18/01/2023",
+      "end": "8/11/2024",
+      "organisation": "Multiple organisations like Apache Airflow,Arduino,CERN-HSF",
+      "location": "Online"
+    },
+    {
+      "title": "Digital Ocean Hacktoberfest",
+      "website": "hacktoberfest.digitalocean.com/",
+      "start": "01/10/2023",
+      "end": "31/10/2023",
+      "organisation": "DigitalOcean, intel, Github, Dev and many more ",
+      "location": "Online"
+    },
+    {
+      "title": "Season of KDE",
+      "website": "season.kde.org/",
+      "start": "15/12/2022",
+      "end": "20/05/2023",
+      "organisation": "KDE Community",
+      "location": "Online"
+    },
+    {
+      "title": "DevOps India Summit 2023",
+      "website": "devopsindiasummit.com/",
+      "start": "17/1/2023",
+      "end": "18/1/2023",
+      "organisation": "Xellentro",
+      "location": "Offline"
+    },
+    {
+      "title": "Google Summer of Earth Engine",
+      "website": "sites.google.com/view/summerofearthengine/home",
+      "start": "15/03/2023",
+      "end": "15/08/2023",
+      "organisation": "Google",
+      "location": "Online"
+    },
+    {
+      "title": "GUADEC",
+      "website": "events.gnome.org/event/101/",
+      "start": "26/07/2023",
+      "end": "31/07/2023",
+      "organisation": "The GNOME Foundation",
+      "location": "Online"
+    },
+    {
+      "title": "SOCIS – The ESA Summer of Code in Space",
+      "website": "www.esa.int/Enabling_Support/Space_Engineering_Technology/SOCIS_The_ESA_Summer_of_Code_in_Space",
+      "start": "01/06/2023",
+      "end": "30/09/2023",
+      "organisation": "European Space Agency",
+      "location": "Online"
+    },
+    {
+      "title": "KWOC",
+      "website": "kwoc.kossiitkgp.org",
+      "start": "25/10/2021",
+      "end": "9/01/2023",
+      "organisation": "KOSS,IIT Kharagpur",
+      "location": "Online"
+    },
+    {
+      "title": "Hyperledger Mentorship Program",
+      "website": "wiki.hyperledger.org/display/INTERN#HyperledgerMentorshipProgram-2023ProgramDates*",
+      "start": "01/02/2023",
+      "end": "30/10/2023",
+      "organisation": "The Linux Foundation",
+      "location": "Online"
+    },
+    {
+      "title": "Delta Winter of Code",
+      "website": "dwoc.io/",
+      "start": "23/10/2023",
+      "end": "29/02/2024",
+      "organisation": "Delta Force, NIT Trichy",
+      "location": "Online"
+    },
+    {
+      "title": "NextJS Conf",
+      "website": "https://nextjs.org/conf",
+      "start": "26/10/2023",
+      "end": "26/10/2023",
+      "organisation": "Vercel",
+      "location": "Online"
+    }
+  ]
+}
