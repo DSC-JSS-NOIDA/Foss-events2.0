@@ -37,9 +37,6 @@ A simple website with a collection of open-source events happening across the gl
 - **Database**: MongoDb
 - **Hosting**: Render, Netlify
 
-## Slack Channel
-[![chat on slack](https://img.shields.io/badge/chat-on%20slack-brightgreen)](https://join.slack.com/t/dschackfest2020/shared_invite/zt-hvmr02i9-kApLVOuvUHIolKwBbk4Vsg)
-
 ### GitHub Repository Structure
 
 | S.No. | Branch Name | Purpose |
@@ -143,6 +140,19 @@ $ git push
 [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](https://github.com/DSC-JSS-NOIDA/Foss-events2.0)
 
 > Made By DSC JSS NOIDA with ❤️
+
+## Our Contributors  !! ✨
+#### Thanks to these wonderful people: ✨
+
+<table>
+	<tr>
+		<td>
+			<a href="https://github.com/DSC-JSS-NOIDA/Foss-events2.0/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DSC-JSS-NOIDA/Foss-events2.0" />
+</a>
+		</td>
+	</tr>
+</table>
 
 
 <br><br>

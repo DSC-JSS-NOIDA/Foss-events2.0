@@ -1,3 +1,6 @@
+@import url("https://fonts.cdnfonts.com/css/queensides");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+
 :root {
   --primary-background: #fff;
   --primary-border-card: rgba(0, 0, 0, 0.125);
@@ -9,6 +12,8 @@
   --primary-input-background: #fff;
   --primary-contact-background: #dee3de;
   --primary-search-dropdown: #f0eee4;
+  --primary-font-family: "Queensides";
+  --secondary-font-family: "Poppins";
 }
 
 [data-theme="dark"] {
@@ -34,12 +39,12 @@
 ::-webkit-scrollbar-thumb {
   width: 10px;
   /* border-radius: 5px; */
-  background: #275F64;
+  background: #275f64;
   cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #275F64;
+  background: #275f64;
   transition: all 0.1s ease-in-out;
   filter: blur(20px);
 }
@@ -106,8 +111,9 @@ html {
 }
 
 .navbar {
-  background-color: #275F64;
+  background-color: #275f64;
   height: 81px;
+  font-family: var(--secondary-font-family);
 }
 
 .navbar-collapse {
@@ -128,7 +134,7 @@ html {
 
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #6FB3B8;
+  color: #6fb3b8;
 }
 
 .custom-control-input {
@@ -148,8 +154,8 @@ html {
   border-radius: 16px;
 }
 
-.custom-switch .custom-control-input~.custom-control-label::after,
-.custom-switch .custom-control-input:checked~.custom-control-label::after {
+.custom-switch .custom-control-input ~ .custom-control-label::after,
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   position: absolute;
   background-color: white;
   display: flex;
@@ -165,28 +171,30 @@ html {
   outline: none;
 }
 
-.custom-switch .custom-control-input:not(:checked)~.custom-control-label::after {
+.custom-switch
+  .custom-control-input:not(:checked)
+  ~ .custom-control-label::after {
   content: "☀";
   transform: rotate(180deg);
   background-color: #f0f6fc;
 }
 
-.custom-switch .custom-control-input:checked~.custom-control-label::after {
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   content: "🌙";
   transform: translateX(100%) !important;
 }
 
-.custom-control-input:focus~.custom-control-label::before {
+.custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 0rem rgba(0, 0, 0, 0) !important;
   border: 3px solid #134277b2 !important;
 }
 
-.custom-control-input:checked~.custom-control-label::before {
+.custom-control-input:checked ~ .custom-control-label::before {
   background-color: black !important;
   border: 3px solid black !important;
 }
 
-.custom-control-input:active~.custom-control-label::before {
+.custom-control-input:active ~ .custom-control-label::before {
   background-color: #134277b2 !important;
   border: 3px solid #134277b2 !important;
 }

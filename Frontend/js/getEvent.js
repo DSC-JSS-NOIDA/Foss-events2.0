@@ -4,12 +4,25 @@ fetch('http://localhost:8080/events')
   .then((res) => {
     let cardContainer = document.getElementsByClassName('card-container')[0];
     for (let data in res) {
-      let emptyDiv = document.createElement('div');
-      emptyDiv.className = 'empty_div';
-      let eventCard = document.createElement('div');
-      eventCard.className = 'event_card';
-      let eventTitle = document.createElement('div');
-      let heading = document.createElement('h3');
+      // For Adding logo In the Center Of Card 
+      let Logodiv = document.createElement("div");
+      let logo = document.createElement('img');
+      logo.className = "img-fluid mb-3";
+      logo.src = `../data/EventLogo/${res[data].img}`;
+      Logodiv.appendChild(logo);
+      Logodiv.style.maxWidth = "100px";
+      Logodiv.style.maxHeight = "100px";
+
+      
+
+      let emptyDiv = document.createElement("div");
+      emptyDiv.className = "empty_div";
+      let eventCard = document.createElement("div");
+      eventCard.className = "event_card";
+      eventCard.appendChild(Logodiv);
+      let eventTitle = document.createElement("div");
+      let heading = document.createElement("h3");
+      
       heading.innerText = res[data].title;
       heading.className = 'event_title';
       eventTitle.appendChild(heading);
@@ -58,6 +71,7 @@ fetch('http://localhost:8080/events')
     }
   });
 
+
 // Filters for Events
 
 // Search Filter Element
@@ -73,6 +87,7 @@ eventStatusFilterElement.addEventListener('change', applyFilter);
 
 // Event Range Start Element
 let eventRangeStartElement = document.getElementById('range-start');
+
 eventRangeStartElement.addEventListener('change', applyFilter);
 
 let eventRangeEndElement = document.getElementById('range-end');
@@ -80,15 +95,19 @@ eventRangeEndElement.addEventListener('change', applyFilter);
 
 // Filter Event Function
 function applyFilter() {
+
   // To remove all class of no_result
   let cardContainer = document.getElementsByClassName('card-container')[0];
   let elements = cardContainer.getElementsByClassName('no_result');
+  
   while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+
   // ends
 
   let eventList = document.querySelectorAll('.empty_div');
   let eventCount = eventList.length;
   Array.from(eventList).forEach((eventItem) => {
+
     eventItem.style.display = 'block';
   });
 
@@ -100,11 +119,13 @@ function applyFilter() {
 
   let rangeStart = eventRangeStartElement.valueAsDate;
   let rangeEnd = eventRangeEndElement.valueAsDate;
+
   console.log(rangeStart, rangeEnd);
   filterByRange(rangeStart, rangeEnd, eventList);
 
   //Display no result message
   Array.from(eventList).forEach((eventItem) => {
+
     if (eventItem.style.display == 'none') {
       eventCount--;
     }
@@ -115,6 +136,7 @@ function applyFilter() {
     noResult.className = 'no_result';
     let heading = document.createElement('h3');
     heading.innerText = 'Sorry 😞 ! No Event found 🔍';
+
     noResult.appendChild(heading);
     cardContainer.appendChild(noResult);
   }
@@ -126,16 +148,19 @@ function filterBySearchTerm(searchTerm, eventList, check) {
   if (check == 1) {
     let userData = searchTerm; //user enetered data
     let suggestions = [];
+    
     Array.from(eventList).forEach((eventItem) => {
       let eventTitle = eventItem
         .querySelector('.event_title')
         .innerText.toLowerCase();
+
       console.log(eventTitle);
       suggestions.push(eventTitle);
     });
 
     let emptyArray = [];
     if (userData) {
+
       icon.onclick = () => {};
       emptyArray = suggestions.filter((data) => {
         //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
@@ -172,8 +197,10 @@ function filterBySearchTerm(searchTerm, eventList, check) {
 function select(element) {
   let selectData = element.textContent;
   search.value = selectData.toUpperCase();
+
   icon.onclick = () => {};
   searchWrapper.classList.remove('active');
+
   let eventList = document.querySelectorAll('.empty_div');
   let searchTerm = search.value.toLowerCase();
   filterBySearchTerm(searchTerm, eventList, 0);
@@ -194,15 +221,17 @@ function showSuggestions(list) {
 function filterByStatus(reqStatus, eventList) {
   let notReqClass = '';
   if (reqStatus == 'online') {
-    notReqClass = '.locationOffline';
-  } else if (reqStatus == 'offline') {
-    notReqClass = '.locationOnline';
-  } else {
+    notReqClass = '.locationOffline'
+  }
+  else if (reqStatus == 'offline') {
+    notReqClass = '.locationOnline'
+  }
+  else {
     return;
   }
 
-  Array.from(eventList).forEach((eventItem) => {
-    let currentEventStatus = eventItem.querySelector(notReqClass);
+  Array.from(eventList).forEach(eventItem => {
+    let currentEventStatus = eventItem.querySelector(notReqClass)
 
     if (currentEventStatus) {
       eventItem.style.display = 'none';
@@ -234,12 +263,15 @@ window.addEventListener('DOMContentLoaded', function () {
   function success() {
     status.classList.remove('error');
     status.classList.remove('success');
+
     form.value = '';
     name.value = '';
     email.value = '';
     message.value = '';
+
     status.classList.add('success');
     status.innerHTML = 'Thanks!Your message is submitted successfully';
+
   }
 
   function error() {

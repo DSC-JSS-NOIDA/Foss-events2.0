@@ -22,6 +22,8 @@ footer {
 #contactus {
   margin: 30px 60px 0px 60px;
   padding-bottom: 55px;
+  font-family: var(--secondary-font-family) !important;
+
 }
 
 #contact-head {

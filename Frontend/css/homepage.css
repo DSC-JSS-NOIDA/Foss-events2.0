@@ -1,35 +1,38 @@
 body {
-    background-image: url("../data/img/About\ Us.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+  background-image: url("../data/img/About\ Us.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 #aboutUs {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #aboutUs #box {
-    width: 100%;
-    height: 50%;
+  width: 100%;
+  height: 50%;
 }
 
 #mainHeading {
-    color: #275F64;
-    font-size: 40px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
-    font-family: 'Poppins', sans-serif;
+  color: #275f64;
+  font-size: 40px;
+  /* font-family: "Courier New", Courier, monospace; */
+  font-weight: 400;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: var(--primary-font-family);
 }
-
 
 #paraGraph {
-    font-size: 20px;
-    color: var(--primary-title);
-    font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: var(--primary-title);
+  font-family: "Poppins", sans-serif;
+  font-family: var(--primary-font-family);
 }
+
+

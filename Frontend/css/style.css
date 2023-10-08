@@ -4,7 +4,6 @@ body {
   background-position: center;
 }
 
-
 #aboutUs {
   height: 100vh;
   display: flex;
@@ -19,12 +18,10 @@ body {
 }
 
 #mainHeading {
-  color: #275F64;
+  color: #275f64;
   font-size: 40px;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bolder;
+  font-family: var(--primary-font-family);
 }
-
 
 #paraGraph {
   font-size: 20px;
@@ -35,7 +32,7 @@ body {
   justify-content: center;
 }
 
-.filter-container>* {
+.filter-container > * {
   margin: 0 20px;
   width: auto;
 }
@@ -44,7 +41,6 @@ label {
   margin-left: 3px;
   margin-bottom: 0;
 }
-
 
 .search-input {
   margin-top: 24px !important;
@@ -83,7 +79,6 @@ label {
   border-bottom: 1px solid var(--primary-input-border);
 }
 
-
 .search-input.active .autocom-box li {
   text-transform: uppercase;
   display: block;
@@ -92,10 +87,6 @@ label {
 .autocom-box li:hover {
   background: var(--primary-search-dropdown);
 }
-
-
-
-
 
 ::-webkit-calendar-picker-indicator {
   filter: invert(0.5);
@@ -306,13 +297,22 @@ footer {
 
 .background-cont {
   background: rgb(246, 231, 231);
-  background: linear-gradient(-20deg, #6fcc6f, #80c580, #83c783, #8fce8f, #c8dc9c, #65b97a, #5cb85c, #54a154);
+  background: linear-gradient(
+    -20deg,
+    #6fcc6f,
+    #80c580,
+    #83c783,
+    #8fce8f,
+    #c8dc9c,
+    #65b97a,
+    #5cb85c,
+    #54a154
+  );
   box-shadow: 6px 7px 12px rgb(123, 146, 123);
   padding: 2%;
   margin-left: 80px;
   width: 92%;
   border-radius: 15px;
-
 }
 
 .social-icon {
@@ -391,7 +391,6 @@ footer {
   background-color: rgb(211, 250, 153);
   display: block;
   animation: statussucc 4s ease forwards;
-
 }
 
 #status.error {
@@ -399,7 +398,6 @@ footer {
   color: white;
   display: block;
   animation: statuserr 4s ease forwards;
-
 }
 
 @keyframes statussucc {
@@ -441,6 +439,7 @@ footer {
   width: 100%;
   z-index: 1;
   background-color: #5cb85c !important;
+  font-family: var(--secondary-font-family) !important;
 }
 
 /* #paraGraph {
@@ -496,7 +495,7 @@ footer {
     flex-direction: column;
   }
 
-  .filter-container>* {
+  .filter-container > * {
     margin: 10px 0;
     width: auto;
   }
@@ -531,8 +530,6 @@ footer {
   }
 }
 
-
-
 @media screen and (max-width: 480px) {
   #mainHeading {
     font-size: 2rem;
@@ -542,7 +539,6 @@ footer {
     font-size: 1.3rem;
   }
 }
-
 
 /* Preloader Css */
 
@@ -657,7 +653,6 @@ footer {
   100% {
     height: 0;
   }
-
 }
 
 aside {
@@ -667,7 +662,7 @@ aside {
 
 .survey-hr {
   margin: 30px 0;
-  border: .5px solid #ddd;
+  border: 0.5px solid #ddd;
 }
 
 .star-rating {
@@ -679,7 +674,7 @@ aside {
   height: 35px;
   overflow: hidden;
   position: relative;
-  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=");
   background-size: contain;
 }
 
@@ -691,7 +686,7 @@ aside {
   height: 100%;
   width: 20%;
   z-index: 1;
-  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=");
   background-size: contain;
 }
 
@@ -708,24 +703,24 @@ aside {
   position: relative;
 }
 
-.star-rating input:hover+i,
-.star-rating input:checked+i {
+.star-rating input:hover + i,
+.star-rating input:checked + i {
   opacity: 1;
 }
 
-.star-rating i~i {
+.star-rating i ~ i {
   width: 40%;
 }
 
-.star-rating i~i~i {
+.star-rating i ~ i ~ i {
   width: 60%;
 }
 
-.star-rating i~i~i~i {
+.star-rating i ~ i ~ i ~ i {
   width: 80%;
 }
 
-.star-rating i~i~i~i~i {
+.star-rating i ~ i ~ i ~ i ~ i {
   width: 100%;
 }
 
@@ -744,10 +739,9 @@ span.scale-rating {
   display: inline-block;
 
   width: 100%;
-
 }
 
-span.scale-rating>label {
+span.scale-rating > label {
   position: relative;
   -webkit-appearance: none;
   outline: 0 !important;
@@ -770,7 +764,7 @@ span.scale-rating label {
   cursor: pointer;
 }
 
-span.scale-rating input[type=radio] {
+span.scale-rating input[type="radio"] {
   position: absolute;
   -webkit-appearance: none;
   opacity: 0;
@@ -789,11 +783,11 @@ span.scale-rating label:hover {
   background: #fddf8d;
 }
 
-span.scale-rating input[type=radio]:last-child {
+span.scale-rating input[type="radio"]:last-child {
   border-right: 0;
 }
 
-span.scale-rating label input[type=radio]:checked~label {
+span.scale-rating label input[type="radio"]:checked ~ label {
   -webkit-appearance: none;
 
   margin: 0;
