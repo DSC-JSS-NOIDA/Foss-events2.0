@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Queensides";
+  src:
+    url("../data/fonts/Queensides-3z7Ey.woff2") format("woff2"),
+    url("../data/fonts/Queensides-3z7Ey.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-image: url("../data/img/About\ Us.svg");
   background-position: center;
@@ -61,6 +70,7 @@ body {
   background: #6fb3b8;
   justify-content: center;
   text-align: center;
+  font-family: 'Queensides', sans-serif;
 }
 
 .event_card:hover {
@@ -91,13 +101,18 @@ body {
   margin-top: 30px;
 }
 
+.event_card .btn h6 {
+  font-weight: bold;
+  all: unset;
+}
+
 .event_card .btn:hover {
   opacity: 0.9;
   transform: scale(1.1);
 }
 
 .date {
-  color: rgb(59, 59, 59);
+  font-weight: bold;
   margin-top: 20px;
 }
 
@@ -110,7 +125,6 @@ body {
   flex-direction: column;
   /* border: 2px solid red; */
   width: 16vw;
-  font-family: var(--primary-font-family) !important;
 }
 
 .empty_div:hover {
@@ -129,7 +143,6 @@ body {
   min-height: 5rem;
   text-transform: uppercase;
   color: var(--primary-title);
-  font-family: var(--primary-font-family) !important;
 }
 
 .event_title:hover {
@@ -274,7 +287,6 @@ body {
   height: auto;
   width: 260px;
   align-self: center;
-  font-family: var(--primary-font-family) !important;
 }
 
 .batman {

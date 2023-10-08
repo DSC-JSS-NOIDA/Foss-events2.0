@@ -26,6 +26,7 @@ fetch('http://localhost:8080/events')
       heading.innerText = res[data].title;
       heading.className = 'event_title';
       eventTitle.appendChild(heading);
+      
       let startDate = document.createElement('span');
       startDate.className = 'date';
       startDate.innerHTML = `<b>Starts:</b> ${res[data].start}`;
@@ -35,6 +36,7 @@ fetch('http://localhost:8080/events')
       let eventDetails = document.createElement('div');
       eventDetails.className = 'event_details';
       let eventLink = document.createElement('a');
+
       Object.assign(eventLink, {
         href: `https://${res[data].website}`,
         target: '_blank',
