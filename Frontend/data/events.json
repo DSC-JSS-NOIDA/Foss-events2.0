@@ -205,7 +205,14 @@
     "organisation": "Vercel",
       "location": "Online",
       "img":"nextjs.png"
-
- 
+  },
+  {
+    "title": "DUMMY Event",
+    "website": "www.opensourceindia.in",
+    "start": "19/10/2023",
+    "end": "20/10/2023",
+    "organisation": "Vercel",
+    "location": "Online",
+    "img":"nextjs.png"
   }
 ]

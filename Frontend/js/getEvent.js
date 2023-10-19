@@ -7,6 +7,7 @@ fetch("../data/events.json")
 
       // For Adding logo In the Center Of Card 
       let Logodiv = document.createElement("div");
+      Logodiv.className = "event_logo"
       let logo = document.createElement('img');
       logo.className = "img-fluid mb-3";
       logo.src = `../data/EventLogo/${res[data].img}`;
@@ -14,26 +15,54 @@ fetch("../data/events.json")
       Logodiv.style.maxWidth = "100px";
       Logodiv.style.maxHeight = "100px";
 
-      
-
       let emptyDiv = document.createElement("div");
+
+      let cardBg = document.createElement('div');
+      cardBg.className = 'event_card_bg'
+
       emptyDiv.className = "empty_div";
       let eventCard = document.createElement("div");
-      eventCard.className = "event_card";
+      eventCard.className = "event_card event_card_new";
+
+      let leaf = document.createElement('img');
+      leaf.className = "event_details_bg";
+      leaf.src = `../data/icons/leaf.png`;
+
       eventCard.appendChild(Logodiv);
+      let eventDetails = document.createElement("div");
+      eventDetails.className = "event_details"
+
       let eventTitle = document.createElement("div");
       let heading = document.createElement("h3");
       heading.innerText = res[data].title;
       heading.className = "event_title";
       eventTitle.appendChild(heading);
+
+      let eventDate = document.createElement("div");
+      eventDate.className = 'event_date'
+
+      let calendarIcon_1 = document.createElement('img');
+      calendarIcon_1.className = "icon ";
+      calendarIcon_1.src = `../data/icons/calendar.png`;
+
+      let calendarIcon_2 = document.createElement('img');
+      calendarIcon_2.className = "icon";
+      calendarIcon_2.src = `../data/icons/calendar.png`;
+
       let startDate = document.createElement("span");
-      startDate.className = "date";
-      startDate.innerHTML = `Starts: ${res[data].start}`;
+      startDate.className = "date_start";
+      let startDatePtag = document.createElement('p')
+      startDatePtag.className = 'date_p'
+      startDatePtag.innerHTML = `Starts: ${res[data].start}`;
+      startDate.append(calendarIcon_1, startDatePtag);
+
       let endDate = document.createElement("span");
-      endDate.className = "date";
-      endDate.innerHTML = `Ends: ${res[data].end}`;
-      let eventDetails = document.createElement("div");
-      eventDetails.className = "event_details";
+      endDate.className = "date_end";
+      let endDatePtag = document.createElement('p')
+      endDatePtag.innerHTML = `Ends: ${res[data].end}`;
+      endDate.append(calendarIcon_2, endDatePtag)
+
+      eventDate.append(startDate,endDate)
       let eventLink = document.createElement("a");
       Object.assign(eventLink, {
         href: `https://${res[data].website}`,
@@ -44,16 +73,29 @@ fetch("../data/events.json")
       let link = document.createElement("h6");
       link.innerText = "More Info";
       eventLink.appendChild(link);
+
+      let organisation_icon = document.createElement('img');
+      organisation_icon.className = "icon";
+      organisation_icon.src = `../data/icons/organisation.png`;
+
+      let organisationMain = document.createElement('div')
+      organisationMain.className = 'organisation_main'
+
       let organisation = document.createElement("p");
       organisation.className = "event_organisation";
       organisation.innerHTML = `<b>Organisation: ${res[data].organisation}`;
+      
+      organisationMain.append(organisation_icon, organisation)
+
       let loc = document.createElement("h5");
       let eventStatus = res[data].location;
+      
       setEventStatus();
       loc.innerText = eventStatus;
-      eventDetails.append(startDate, endDate, organisation, loc, eventLink);
-      eventCard.append(eventTitle, eventDetails);
-      emptyDiv.appendChild(eventCard);
+      eventDetails.append(eventTitle, eventDate, eventLink, organisationMain);
+      // eventDetails.append()
+      eventCard.append(eventDetails, leaf);
+      emptyDiv.appendChild(eventCard, cardBg);
       cardContainer.appendChild(emptyDiv);
 
       //function to set the status of event
