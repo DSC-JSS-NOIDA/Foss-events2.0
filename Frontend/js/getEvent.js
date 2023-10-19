@@ -93,7 +93,6 @@ fetch("../data/events.json")
       setEventStatus();
       loc.innerText = eventStatus;
       eventDetails.append(eventTitle, eventDate, eventLink, organisationMain);
-      // eventDetails.append()
       eventCard.append(eventDetails, leaf);
       emptyDiv.appendChild(eventCard, cardBg);
       cardContainer.appendChild(emptyDiv);
