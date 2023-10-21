@@ -8,3 +8,6 @@
     color: white;
     border: none;
 }
+label,h5{
+  color: var(--primary-title);
+}

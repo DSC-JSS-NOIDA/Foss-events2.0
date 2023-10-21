@@ -1,5 +1,5 @@
 body {
-  background-image: url("../data/img/About\ Us.svg");
+  background-image: var(--background-picture);
   background-size: cover;
   background-position: center;
 }
@@ -346,7 +346,7 @@ footer {
 }
 
 .background-cont {
-  background: rgb(246, 231, 231);
+  background: var(--primary-contact-background);
   background: linear-gradient(
     -20deg,
     #6fcc6f,
@@ -495,7 +495,7 @@ footer {
 /* #paraGraph {
   font-size: 1.4rem;
   color: var(--primary-title);
-} */
+} */ 
 
 /* Scroll to top css */
 .to-top {

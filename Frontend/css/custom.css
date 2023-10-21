@@ -14,6 +14,8 @@
   --primary-search-dropdown: #f0eee4;
   --primary-font-family: "Queensides";
   --secondary-font-family: "Poppins";
+  --primary-background-conct: rgba(246, 231, 231);
+  --background-picture: url("../data/img/About\ Us.svg");
 }
 
 [data-theme="dark"] {
@@ -28,6 +30,10 @@
   --primary-input-background: #0d1117;
   --primary-contact-background: #1a2228;
   --primary-search-dropdown: #282c35;
+  --primary-font-family: "Queensides";
+  --secondary-font-family: "Poppins";
+  --primary-background-conct: rgba(246, 231, 231,0);
+  --background-picture: url("../data/img/aboutusdark.svg");
 }
 
 /* custom scroll bar */

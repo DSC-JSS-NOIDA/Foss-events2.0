@@ -1,5 +1,5 @@
 body {
-  background-image: url('../data/img/About\ Us.svg');
+  background-image: var(--background-picture);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,14 +1,13 @@
 @font-face {
-  font-family: "Queensides";
-  src:
-    url("../data/fonts/Queensides-3z7Ey.woff2") format("woff2"),
-    url("../data/fonts/Queensides-3z7Ey.woff") format("woff");
+  font-family: 'Queensides';
+  src: url('../data/fonts/Queensides-3z7Ey.woff2') format('woff2'),
+    url('../data/fonts/Queensides-3z7Ey.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  background-image: url("../data/img/About\ Us.svg");
+  background-image: var(--background-picture);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,7 +59,7 @@ body {
   align-items: center;
   margin: 30px;
   width: 300px;
-  min-height: 30rem;
+  min-height: 40rem;
   word-wrap: break-all;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -114,18 +113,20 @@ body {
 }
 
 .event_card::before {
-  /* content: "";
+  content: '';
   width: 20px;
   height: 20px;
   background-color: #275f64;
   border-radius: 100%;
   position: absolute;
   top: 25px;
-  left: 47%; */
+  left: 47%; 
 }
 
 .event_card .btn {
-  position: relative;
+  position: absolute;
+  bottom: 53px;
+  right: 73px;
   border-radius: 13px;
   border: 2px solid #fff;
   background: #275f64;
@@ -248,22 +249,6 @@ body {
   font-family: var(--secondary-font-family) !important;
 }
 
-.background-cont {
-  background: rgb(246, 231, 231);
-  background: linear-gradient(180deg, #6fb3b8 -13.33%, #e5e5e5 100%);
-  box-shadow: 6px 7px 12px #6fb3b8;
-  padding: 2%;
-  margin-left: 80px;
-  width: 92%;
-  border-radius: 15px;
-  font-family: var(--secondary-font-family) !important;
-}
-
-.icon {
-  height: 30px;
-  width: 30px;
-}
-
 .social-icon {
   display: inline-block;
   width: 10px;
@@ -301,15 +286,115 @@ body {
   left: 40px;
 }
 
+.search-filter-flex {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  align-items: center;
+  width: auto;
+}
+
+.background-cont {
+  background: rgb(246, 231, 231);
+  background: linear-gradient(180deg, #6fb3b8 -13.33%, #e5e5e5 100%);
+  box-shadow: 6px 7px 12px #6fb3b8;
+  padding: 2%;
+  margin-left: 60px;
+  margin-right: 50px;
+  width: auto;
+  border-radius: 15px;
+  font-family: var(--secondary-font-family) !important;
+}
+
+/* .search-input {
+  margin: auto;
+  align-self: center;
+  display: flex;
+} */
+
+/* .batman {
+  display: flex;
+  position: relative;
+  bottom: 0.6vw;
+} */
+
 .form-control {
   width: 500px;
   height: 54px;
-  flex-shrink: 0;
   border-radius: 12px;
   background: #f6f6f2;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
-  padding-left: 55px;
+  padding: 10px 0px 10px 55px;
   font-family: var(--primary-font-family) !important;
+  margin-left: 17px;
+  margin-top: 44px;
+}
+
+@media (max-width: 2000px) {
+  .form-group i {
+    position: relative;
+    top: 22.5px;
+    left: 54px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .form-control {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1134px) {
+  .form-control {
+    width: 220px;
+    padding: 30px;
+  }
+  .form-group2 i {
+    left: 0;
+    top: 0;
+  }
+}
+
+@media (max-width: 1020px) {
+  .filter-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-control {
+    margin-top: 20px;
+    padding: 0 27px;
+  }
+  .form-group i {
+    top: 9.5px;
+    left: 54px;
+  }
+  .form-group2 {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 760px) {
+  .filter-container {
+    grid-template-columns: 1fr;
+  }
+  .form-control {
+    width: 300px;
+    padding: 30px;
+    margin-right: 39px;
+  }
+  .form-group i {
+    top: 9.5px;
+    left: 54px;
+  }
+}
+@media (max-width: 490px) {
+  .form-control {
+    width: 200px;
+  }
 }
 
 .form-control::placeholder {
@@ -329,20 +414,12 @@ body {
   outline: none;
 }
 
-.form-group i {
-  position: relative;
-  top: 2.5vw;
-  left: 1vw;
-}
-
 .form-group {
   font-size: 24px;
-}
-
-.search-input {
-  margin: auto;
-  align-self: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .form-control2 {
@@ -362,12 +439,6 @@ body {
 .event_organisation {
   height: auto;
   align-self: center;
-}
-
-.batman {
-  display: flex;
-  position: relative;
-  bottom: 0.6vw;
 }
 
 .form-group2 {
