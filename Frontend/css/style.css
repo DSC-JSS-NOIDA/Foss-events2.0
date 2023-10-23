@@ -92,9 +92,14 @@ label {
   filter: invert(0.5);
 }
 
-.icon {
+/* .icon {
   padding: 10px;
   min-width: 40px;
+} */
+
+.icon {
+  height: 30px;
+  width: 30px;
 }
 
 .card-container {
@@ -130,7 +135,7 @@ label {
   transition: all 0.5s ease;
 }
 
-.event_card {
+/* .event_card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -139,29 +144,52 @@ label {
   padding: 30px;
   align-items: center;
   margin: 30px;
-  width: 300px;
-  min-height: 30rem;
+  width: 600px;
+  min-height: 20rem;
   word-wrap: break-all;
   cursor: pointer;
   transition: all 0.5s ease;
   border-bottom-color: #5cb85c;
   border-bottom-width: 4px;
   box-shadow: 0 8px 16px 0 #5cb85c;
+} */
+
+.event_card_new {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid var(--primary-border-card);
+  border-radius: 5px;
+  padding: 30px;
+  align-items: center;
+  margin: 30px;
+  width: 600px;
+  min-height: 20rem;
+  word-wrap: break-all;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 5px solid #fff;
+  border-radius: 1vw;
+  box-shadow: 3px 8px 16px 0px rgba(0, 0, 0, 0.25);
+  background: #6fb3b8;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Queensides', sans-serif;
 }
+
 
 .event_card:hover {
   box-shadow: 0 2px 8px 0 #5cb85c;
 }
 
 .event_card::before {
-  content: "";
+  /* content: "";
   width: 15px;
   height: 15px;
   background-color: #5cb85c;
   border-radius: 100%;
   position: absolute;
   top: 25px;
-  left: 47%;
+  left: 47%; */
 }
 
 .event_card .btn {
@@ -176,19 +204,43 @@ label {
   transform: scale(1.1);
 }
 
+.event_logo {
+  width: 30%;
+}
+
+.event_details {
+  z-index: 1000;
+  width: 70%;
+}
+
+
+.date_start {
+  display: flex;
+  flex-direction: row;
+}
+
+.date_end {
+  display: flex;
+  flex-direction: row;
+}
+
+.event_card_bg {
+  background-image: url('../data/icons/leaf.png');
+}
+
 .date {
   color: var(--primary-date);
   margin-top: 20px;
 }
 
-.date:nth-child(2) {
+/* .date:nth-child(2) {
   margin-bottom: 20px;
-}
+} */
 
-.event_details {
+/* .event_details {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .empty_div:hover {
   transform: scale(0.95);
@@ -200,19 +252,17 @@ label {
 }
 
 .event_title {
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 1.5rem;
-  min-height: 5rem;
   text-transform: uppercase;
   color: var(--primary-title);
 }
 
-.event_title:hover {
+/* .event_title:hover {
   font-weight: bold;
-  min-height: 5rem;
   text-transform: uppercase;
   color: #5cb85c;
-}
+} */
 
 .background-cont:hover {
   transform: scale(1.009);
