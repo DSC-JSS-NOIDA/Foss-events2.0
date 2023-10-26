@@ -1,31 +1,68 @@
-.btn-submit{
+.btn{
     /* color: #6FB3B8; */
-    color: var(--feedback-btn-color);
-  border: 2px solid var(--feedback-btn-color);
+    color: rgba(39, 95, 100, 0.7);
+    border: 2px solid rgba(39, 95, 100, 0.7);
 }
-.btn-submit:hover{
-    background-color:  var(--feedback-btn-color);
+.btn:hover{
+    background-color: rgba(39, 95, 100, 0.7);
     color: white;
     border: none;
 }
-legend,label,h5{
-  color: var(--primary-title);
+label,h5{
+    color: var(--primary-title);
 }
-#feedback {
-  background-image: var(--background-picture); 
-  background-repeat: no-repeat;
-  background-size:cover;
-  /* Background color for the form container */
-  /*background-color:var(--background-color);*/
-  
-  padding: 20px;
-  border-radius: 10px; /* Add rounded corners */
+.app{
+    background-color: #dddddd;
+    width: 90%;
+    max-width: 600px;
+    margin: 45px auto 0;
+    border-radius: 10px;
+    padding: 30px;
 }
-.fas
-{
-  color: goldenrod;
+.app h1{
+    color:rgb(39, 95, 100); font-weight:bold;
+    border-bottom: 1px #0d1117 solid;
+    padding-bottom: 10px;
 }
-
-/* .btn{
-  background-color: var(--feedback-btn-color) !important;
-} */
+.feedback h2{
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+}
+.btn{
+    background-color: #fffcfc;
+    color: #228b22;
+    font-weight: 500;
+    width: 100%;
+    border:  1px solid #228b22;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+    transform: scale(1);
+    box-shadow: 0 0 20px 5px;
+}
+#next-btn{
+    background: #275f64;
+    color: #fffcfc;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+.btn.selected{
+    background-color: #228b22;
+    color: #fffcfc;
+}
+textarea{
+    width: 100%;
+    height: 200px;
+}

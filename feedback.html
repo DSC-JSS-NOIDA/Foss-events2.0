@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
-    <!-- <link rel="shortcut icon" type="image/jpeg" href="Frontend/data/img/favicon.jpeg" /> -->
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/jpeg" href="Frontend/data/img/favicon.jpeg" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -13,168 +13,89 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous"
     />
     <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
     />
-  <link rel="stylesheet" href="./Frontend/css/custom.css">
-<link rel="stylesheet" href="./Frontend//css/contactus.css">
-<link rel="stylesheet" href="./Frontend/css/feedback.css">
+    <link rel="stylesheet" href="./Frontend/css/custom.css">
+    <link rel="stylesheet" href="./Frontend//css/contactus.css">
+    <link rel="stylesheet" href="./Frontend/css/feedback.css">
     <link rel="stylesheet" href="./Frontend/style.css" />
-    <script src="script.js" defer></script>
+
 </head>
 <body>
-    <!----navbar-->
-    <nav class="navbar navbar-light   navbar-expand-md">
-      <a class="navbar-brand" href="/#aboutUs">FossEvents</a>
-      <div class="navbar-nav ml-auto toogle-slider">
+<!----navbar-->
+<nav class="navbar navbar-light   navbar-expand-md">
+    <a class="navbar-brand" href="/#aboutUs">FossEvents</a>
+    <div class="navbar-nav ml-auto toogle-slider">
         <div class="custom-control custom-switch">
-          <input
-            type="checkbox"
-            class="custom-control-input"
-            id="customSwitches"
-          />
-          <label class="custom-control-label" for="customSwitches"></label>
+            <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="customSwitches"
+            />
+            <label class="custom-control-label" for="customSwitches"></label>
         </div>
-      </div>
-      <button
-        class="navbar-toggler"
-        data-toggle="collapse"
-        data-target="#list"
-        aria-label="Toggle Navigation"
-      >
+    </div>
+    <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#list"
+            aria-label="Toggle Navigation"
+    >
         <span class="navbar-toggler-icon"></span>
-      </button>
+    </button>
 
-      <div class="collapse navbar-collapse" id="list">
+
+    <div class="collapse navbar-collapse" id="list">
         <ul class="navbar-nav">
-          <li class="navbar-item">
-            <a href="/#" class="nav-link">About Us</a>
-          </li>
-          <li class="navbar-item">
-            <a href="/Frontend/pages/event.html" class="nav-link">Events</a>
-          </li>
-          <li class="navbar-item">
-            <a href="/Frontend/pages/contactus.html" class="nav-link">Contact Us</a>
-          </li>
-          <li class="navbar-item">
-            <a href="/feedback.html" class="nav-link">Feedback</a>
-          </li>
+            <li class="navbar-item">
+                <a href="/#" class="nav-link">About Us</a>
+            </li>
+            <li class="navbar-item">
+                <a href="/Frontend/pages/event.html" class="nav-link">Events</a>
+            </li>
+            <li class="navbar-item">
+                <a href="/Frontend/pages/contactus.html" class="nav-link">Contact Us</a>
+            </li>
+            <li class="navbar-item">
+                <a href="/feedback.html" class="nav-link">Feedback</a>
+            </li>
         </ul>
-      </div>
-    </nav>
-      
-      
-    <!---end of navbar-->
+    </div>
+</nav>
 
-    <!---feedback form-->
-    <section style="margin-left: 6rem;margin-right: 6rem;margin-top: 7rem;margin-bottom: 2rem; text-align: center; padding: 20px; " class="border shadow" id="feedback" >
-    
-        <aside style="padding:15px">
-            <h5 style="color: #000;">
-                <h1 style="color:var(--feedback-btn-color); font-weight:bold; ">Feedback  Form</h1>
-                <br>
-                <legend >Dear Customer,<br>
-                    Thank you for letting us serve you. We would like to know how we
-                    performed.
-                    Please
-                    spare some moments to give us your valuable feedback as it will
-                    help us in improving our service.
-                </legend>
-            </h5>
-            
-    
-            <h5>Please rate your service experience for the following parameters</h5><br>
-            <form  target="_blank">
-                <fieldset><legend>1. Your overall experience with us ?</legend><br>
-                <span class="star-rating" >
-                    <input type="radio" name="rating1" value="1"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating1" value="2"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating1" value="3"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating1" value="4"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating1" value="5"><i class="fas fa-star"></i>
-                </span>
-                </fieldset>
-                <div class="clear"></div>
-                <hr class="survey-hr">
-                <fieldset>
-                
-                <legend>2. How much our service is helpful for you ? </legend><br>
-               
-                <span class="star-rating">
-                    <input type="radio" name="rating2" value="1"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating2" value="2"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating2" value="3"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating2" value="4"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating2" value="5"><i class="fas fa-star"></i>
-                </span>
-              </fieldset>
-              <div class="clear"></div>
-                <hr class="survey-hr">
-              <fieldset>
-                
-                
-                <legend>3.Quality of texts or informations </legend><br>
-                <span class="star-rating">
-                    <input type="radio" name="rating3" value="1"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating3" value="2"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating3" value="3"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating3" value="4"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating3" value="5"><i class="fas fa-star"></i>
-                </span>
-              </fieldset>
-              <div class="clear"></div>
-                <hr class="survey-hr">
-              <fieldset>
-                
-                
-                <legend>4. Quality of work done</legend><br>
-                <span class="star-rating">
-                    <input type="radio" name="rating4" value="1"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating4" value="2"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating4" value="3"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating4" value="4"><i class="fas fa-star"></i>
-                    <input type="radio" name="rating4" value="5"><i class="fas fa-star"></i>
-                </span>
-              </fieldset>
-                <div class="clear"></div>
-                <hr class="survey-hr">
-                
-               
-                <legend for="m_3189847521540640526commentText">5. Any Other
-                    suggestions:</legend><br /><br />
-                <textarea class="text" cols="75" name="commentText" rows="5" style="box-sizing: border-box; width:250px;height: 100px;color: black;font-weight: bold;"></textarea><br>
-                <br>
-                <div class="clear"></div>
-                <form>
-                </a><button type="submit" class="btn btn-submit btn-outline-success  shadow" id="feedbackbtn" style="font-weight: bolder;font-size: larger;">Submit your review</button>
-                </form>
-            </form>
-    
-        </aside>
-    </section>
-    <!---end of feedback form-->
 
-    <!---footer-->
-    <footer>
-        <div class="footer">
-          Made with &#10084; By <a href="https://dscjss.in">DSC JSSATEN</a>
-          <a
-            href="https://github.com/dsc-jss-noida"
-            className=" text-black github-footer"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-          </a>
+<!---end of navbar-->
+
+<!---feedback form-->
+<div class="app" >
+    <h1>Feedback Form</h1>
+    <div class="quiz">
+        <h2 id="question">Question</h2>
+        <div id="answer-buttons">
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">4</button>
         </div>
-        <img src="/Frontend/data/img/Main_logo.svg" className="mt-2" width="250" alt="" />
-      </footer>
-      <script src="/Frontend/js/theme.js"></script>
-    <!---end of footer-->
+        <button id="next-btn">Next</button>
+    </div>
+</div>
+<footer>
+    <div class="footer">
+        Made with &#10084; By <a href="https://gdscjss.in">DSC JSSATEN</a>
+        <a href="https://github.com/dsc-jss-noida" className=" text-black github-footer" rel="noopener noreferrer"
+           target="_blank">
+        </a>
+    </div>
+    <img src="./Frontend/data/img/Main_logo.svg" className="mt-2" width="250" alt="" />
+</footer>
+<script src="Frontend/js/feedback.js"></script>
 </body>
 </html>
