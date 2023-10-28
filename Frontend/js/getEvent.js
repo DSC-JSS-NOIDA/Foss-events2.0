@@ -38,7 +38,7 @@ fetch("../data/events.json")
       Object.assign(eventLink, {
         href: `https://${res[data].website}`,
         target: "_blank",
-        rel: "noopener noreferrer",
+        rel: "noopener noreferrer", 
         className: "btn btn-primary link btn-more",
       });
       let link = document.createElement("h6");
@@ -117,7 +117,7 @@ function applyFilter() {
 
   let rangeStart = eventRangeStartElement.valueAsDate;
   let rangeEnd = eventRangeEndElement.valueAsDate;
-  console.log(rangeStart, rangeEnd)
+  console.log(rangeStart, rangeEnd,eventList)
   filterByRange(rangeStart, rangeEnd, eventList)
 
   //Display no result message
@@ -233,23 +233,21 @@ function filterByStatus(reqStatus, eventList) {
 // Filter by Range
 function filterByRange(rangeStart, rangeEnd, eventList) {
   Array.from(eventList).forEach(eventItem => {
+    const dateText = eventItem.querySelector('.date').innerText.split(":", 2)[1];
+    const [day, month, year] = dateText.split("/").map(Number);
+    const eventDate = new Date(year, month - 1, day); // Note: Month is 0-based in Date objects
 
-    let startDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
-    let endDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
-
-    startDate = startDate.split("/", 3);
-    startDate = `${startDate[1]}/${startDate[0]}/${startDate[2]}`;
-    startDate = new Date(startDate);
-
-    endDate = endDate.split("/", 3);
-    endDate = `${endDate[1]}/${endDate[0]}/${endDate[2]}`;
-    endDate = new Date(endDate);
-
-    if (!(startDate.getDate() >= rangeStart.getDate() && startDate.getDate() < rangeEnd.getDate() && endDate.getDate() >= rangeStart.getDate() && endDate.getDate() <= rangeEnd.getDate())) {
-      eventItem.style.display = 'none';
+    if (
+      (rangeStart === null || eventDate >= rangeStart) &&
+      (rangeEnd === null || eventDate <= rangeEnd)
+    ) {
+      eventItem.style.display = 'block'; // Display the event
+    } else {
+      eventItem.style.display = 'none'; // Hide the event
     }
   });
 }
+
 
 //Scroll to top
 const Top = document.querySelector(".to-top");
