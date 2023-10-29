@@ -67,7 +67,8 @@ fetch("../data/events.json")
         if (new Date() > endDate) {
           eventStatus = "Offline";
           loc.className = "locationOffline";
-        } else {
+        } else if (new Date() < endDate) {
+          eventStatus = "Online";
           loc.className = "locationOnline";
         }
       }
@@ -152,7 +153,7 @@ function filterBySearchTerm(searchTerm, eventList, check) {
     let suggestions = [];
     Array.from(eventList).forEach(eventItem => {
       let eventTitle = eventItem.querySelector('.event_title').innerText.toLowerCase();
-      console.log(eventTitle);
+      // console.log(eventTitle);
       suggestions.push(eventTitle);
     });
 
@@ -206,7 +207,7 @@ function select(element) {
 function showSuggestions(list) {
   let listData;
   if (!list.length) {
-    userValue = search.value;
+    let userValue = search.value;
     listData = '<li>' + userValue + '</li>';
   } else {
     listData = list.join('');
@@ -322,6 +323,27 @@ function stringtoDate(dateString){
 // }
 
 
+
+// Filter by Range
+function filterByRange(rangeStart, rangeEnd, eventList) {
+  Array.from(eventList).forEach(eventItem => {
+
+    let startDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
+    let endDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
+
+    startDate = startDate.split("/", 3);
+    startDate = `${startDate[1]}/${startDate[0]}/${startDate[2]}`;
+    startDate = new Date(startDate);
+
+    endDate = endDate.split("/", 3);
+    endDate = `${endDate[1]}/${endDate[0]}/${endDate[2]}`;
+    endDate = new Date(endDate);
+
+    if (!(startDate.getDate() >= rangeStart.getDate() && startDate.getDate() < rangeEnd.getDate() && endDate.getDate() >= rangeStart.getDate() && endDate.getDate() <= rangeEnd.getDate())) {
+      eventItem.style.display = 'none';
+    }
+  });
+}
 
 //Scroll to top
 const Top = document.querySelector(".to-top");

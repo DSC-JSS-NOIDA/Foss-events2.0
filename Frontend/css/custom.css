@@ -33,7 +33,7 @@
   --primary-search-dropdown: #282c35;
   --primary-font-family: "Queensides";
   --secondary-font-family: "Poppins";
-  --primary-background-conct: rgba(246, 231, 231,0);
+  --primary-background-conct: rgba(246, 231, 231, 0);
   --background-picture: url("../data/img/aboutusdark.svg");
   --feedback-btn-color: #5f9ca0;
 }
@@ -78,12 +78,14 @@ html {
 
 .social-icons {
   position: fixed;
-  top: 13%;
-  left: 0%;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 85px;
-  margin-top: 98px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   z-index: 11;
 }
 
@@ -127,10 +129,19 @@ html {
 .navbar-collapse {
   justify-content: center;
   padding-right: 10%;
+  @media screen and (max-width: 767px) {
+    padding: 10px 0;
+    background-color: #275f64;
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    left: 0px;
+    top: 65px;
+  }
 }
 
 .navbar-item {
-  padding: 0 15px;
+  padding: 0 12px;
 }
 
 .navbar-light .navbar-brand,
@@ -138,6 +149,17 @@ html {
   color: white;
   text-decoration: none;
   font-size: 22px;
+  padding: 8px;
+  @media screen and (max-width: 960px) and (min-width: 768px) {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    margin: 0;
+  }
 }
 
 .navbar-light .navbar-brand:hover,
@@ -179,9 +201,7 @@ html {
   outline: none;
 }
 
-.custom-switch
-  .custom-control-input:not(:checked)
-  ~ .custom-control-label::after {
+.custom-switch .custom-control-input:not(:checked) ~ .custom-control-label::after {
   content: "☀";
   transform: rotate(180deg);
   background-color: #f0f6fc;
