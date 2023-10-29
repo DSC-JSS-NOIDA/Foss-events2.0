@@ -2,9 +2,10 @@
 fetch("../data/events.json")
   .then((res) => res.json())
   .then((res) => {
+    console.log(res);
     let cardContainer = document.getElementsByClassName("card-container")[0];
     for (let data in res) {
-
+      console.log(res[data]);
       // For Adding logo In the Center Of Card 
       let Logodiv = document.createElement("div");
       let logo = document.createElement('img');
@@ -27,10 +28,10 @@ fetch("../data/events.json")
       heading.className = "event_title";
       eventTitle.appendChild(heading);
       let startDate = document.createElement("span");
-      startDate.className = "date";
+      startDate.className = "startdate";
       startDate.innerHTML = `Starts: ${res[data].start}`;
       let endDate = document.createElement("span");
-      endDate.className = "date";
+      endDate.className = "enddate";
       endDate.innerHTML = `Ends: ${res[data].end}`;
       let eventDetails = document.createElement("div");
       eventDetails.className = "event_details";
@@ -54,7 +55,9 @@ fetch("../data/events.json")
       eventDetails.append(startDate, endDate, organisation, loc, eventLink);
       eventCard.append(eventTitle, eventDetails);
       emptyDiv.appendChild(eventCard);
+     // console.log(emptyDiv);
       cardContainer.appendChild(emptyDiv);
+      // console.log(cardContainer[0]);
 
       //function to set the status of event
       function setEventStatus() {
@@ -98,27 +101,32 @@ function applyFilter() {
 
   // To remove all class of no_result
   let cardContainer = document.getElementsByClassName("card-container")[0];
+  console.log(cardContainer);
   let elements = cardContainer.getElementsByClassName('no_result');
   while (elements[0])
     elements[0].parentNode.removeChild(elements[0])
   // ends
 
   let eventList = document.querySelectorAll('.empty_div');
+  console.log(eventList);
   let eventCount = eventList.length;
   Array.from(eventList).forEach(eventItem => {
     eventItem.style.display = 'block';
   });
 
   let searchTerm = search.value.toLowerCase();
+  console.log(searchTerm);
   filterBySearchTerm(searchTerm, eventList, 1);
 
   let reqStatus = eventStatusFilterElement.value.toLowerCase();
   filterByStatus(reqStatus, eventList);
 
   let rangeStart = eventRangeStartElement.valueAsDate;
+  console.log(rangeStart);
   let rangeEnd = eventRangeEndElement.valueAsDate;
   console.log(rangeStart, rangeEnd)
-  filterByRange(rangeStart, rangeEnd, eventList)
+  if(rangeStart && rangeEnd)
+    filterByRange(rangeStart, rangeEnd, eventList)
 
   //Display no result message
   Array.from(eventList).forEach(eventItem => {
@@ -152,10 +160,9 @@ function filterBySearchTerm(searchTerm, eventList, check) {
     let emptyArray = [];
     if (userData) {
       icon.onclick = () => {
-
-      }
       emptyArray = suggestions.filter((data) => {
         //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+        console.log(data)
         return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
       });
       emptyArray = emptyArray.map((data) => {
@@ -163,11 +170,13 @@ function filterBySearchTerm(searchTerm, eventList, check) {
         return data = '<li>' + data + '</li>';
       });
       searchWrapper.classList.add("active"); //show autocomplete box
+      console.log(emptyArray);
       showSuggestions(emptyArray);
       let allList = suggBox.querySelectorAll("li");
       for (let i = 0; i < allList.length; i++) {
         //adding onclick attribute in all li tag
         allList[i].setAttribute("onclick", "select(this)");
+      }
       }
     } else {
       searchWrapper.classList.remove("active"); //hide autocomplete box
@@ -177,6 +186,7 @@ function filterBySearchTerm(searchTerm, eventList, check) {
   Array.from(eventList).forEach(eventItem => {
 
     let eventTitle = eventItem.querySelector('.event_title').innerText.toLowerCase()
+    console.log(eventTitle.indexOf(searchTerm));
 
     if (eventTitle.indexOf(searchTerm) == -1) {
       eventItem.style.display = 'none';
@@ -187,12 +197,11 @@ function select(element) {
   let selectData = element.textContent;
   search.value = selectData.toUpperCase();
   icon.onclick = () => {
-
-  }
   searchWrapper.classList.remove("active");
   let eventList = document.querySelectorAll('.empty_div');
   let searchTerm = search.value.toLowerCase();
   filterBySearchTerm(searchTerm, eventList, 0);
+  }
 }
 
 function showSuggestions(list) {
@@ -229,27 +238,112 @@ function filterByStatus(reqStatus, eventList) {
 
   });
 }
-
-// Filter by Range
-function filterByRange(rangeStart, rangeEnd, eventList) {
+//filterByRange
+function filterByRange(startDate, endDate, eventList) {
   Array.from(eventList).forEach(eventItem => {
+    // console.log(eventItem);
+    // console.log(startDate); 
+    const eventStartDateString = eventItem.querySelector('.startdate').textContent;
+    // console.log(eventStartDateString);
+    const ds = eventStartDateString.slice(eventStartDateString.indexOf(":") + 2);
+    const eventEndDateString = eventItem.querySelector('.enddate').textContent;
+    const de = eventEndDateString.slice(eventEndDateString.indexOf(":") + 2);
+    // console.log(ds,de)
+    // console.log(eventEndDateString);
+    // Parse the date strings with the correct format
+    const eventStartDate = stringtoDate(ds);
+    const eventEndDate = stringtoDate(de);
 
-    let startDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
-    let endDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
-
-    startDate = startDate.split("/", 3);
-    startDate = `${startDate[1]}/${startDate[0]}/${startDate[2]}`;
-    startDate = new Date(startDate);
-
-    endDate = endDate.split("/", 3);
-    endDate = `${endDate[1]}/${endDate[0]}/${endDate[2]}`;
-    endDate = new Date(endDate);
-
-    if (!(startDate.getDate() >= rangeStart.getDate() && startDate.getDate() < rangeEnd.getDate() && endDate.getDate() >= rangeStart.getDate() && endDate.getDate() <= rangeEnd.getDate())) {
-      eventItem.style.display = 'none';
+    const esd = new Date(eventStartDate);
+    const eed = new Date(eventEndDate);
+    const sd = new Date(startDate);
+    const ed = new Date(endDate);
+    console.log(esd,eed,sd,ed);
+    // Check if the event falls within the specified date range
+    if (sd && ed) {
+      if (esd < sd || eed > ed) {
+        eventItem.style.display = 'none';
+      }
+    } else if (sd) {
+      if (esd < sd) {
+        eventItem.style.display = 'none';
+      }
+    } else if (ed) {
+      if (eed > ed) {
+        eventItem.style.display = 'none';
+      }
     }
   });
 }
+
+
+function stringtoDate(dateString){
+  const parts = dateString.split('/'); // Split the string by '/' to get day, month, and year
+
+  if (parts.length === 3) {
+    const day = parseInt(parts[0], 10); // Parse day as an integer
+    const month = parseInt(parts[1], 10) - 1; // Parse month as an integer (subtract 1 since months are zero-based)
+    const year = parseInt(parts[2], 10);
+  
+    // Create a JavaScript Date object
+    const date = new Date(year, month, day);
+  
+    return date // Output: Wed Oct 26 2023 00:00:00 GMT+0530 (India Standard Time)
+  } else {
+    console.error("Invalid date format");
+  }
+}
+
+// function convertdate(startdate){
+//   // Parse the date string into a Date object
+//   const date = new Date(startdate);
+
+//   // Extract day, month, and year
+//   const day = date.getDate();
+//   const month = date.getMonth() + 1; // Months are zero-based, so add 1
+//   const year = date.getFullYear();
+
+//   // Ensure leading zeros for day and month if needed
+//   const formattedDay = day < 10 ? `0${day}` : day;
+//   const formattedMonth = month < 10 ? `0${month}` : month;
+
+//   // Create the "dd/mm/yyyy" format
+//   const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
+//   return formattedDate;
+// }
+
+// // Function to parse date strings in "dd/mm/yyyy" format
+// function parseDate(dateString) {
+//   const [day, month, year] = dateString.split('/').map(part => parseInt(part, 10));
+//   if (isNaN(day) || isNaN(month) || isNaN(year)) {
+//     // Invalid date format, return null
+//     return null;
+//   }
+//   return new Date(year, month - 1, day); // Month is 0-based in JavaScript Date
+// }
+
+
+
+// Filter by Range
+// function filterByRange(rangeStart, rangeEnd, eventList) {
+//   Array.from(eventList).forEach(eventItem => {
+
+//     let startDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
+//     let endDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
+
+//     startDate = startDate.split("/", 3);
+//     startDate = `${startDate[1]}/${startDate[0]}/${startDate[2]}`;
+//     startDate = new Date(startDate);
+
+//     endDate = endDate.split("/", 3);
+//     endDate = `${endDate[1]}/${endDate[0]}/${endDate[2]}`;
+//     endDate = new Date(endDate);
+
+//     if (!(startDate.getDate() >= rangeStart.getDate() && startDate.getDate() < rangeEnd.getDate() && endDate.getDate() >= rangeStart.getDate() && endDate.getDate() <= rangeEnd.getDate())) {
+//       eventItem.style.display = 'none';
+//     }
+//   });
+// }
 
 //Scroll to top
 const Top = document.querySelector(".to-top");
