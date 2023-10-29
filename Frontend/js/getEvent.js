@@ -114,6 +114,7 @@ function applyFilter() {
   });
 
   let searchTerm = search.value.toLowerCase();
+  console.log(searchTerm);
   filterBySearchTerm(searchTerm, eventList, 1);
 
   let reqStatus = eventStatusFilterElement.value.toLowerCase();
@@ -123,7 +124,8 @@ function applyFilter() {
   console.log(rangeStart);
   let rangeEnd = eventRangeEndElement.valueAsDate;
   console.log(rangeStart, rangeEnd)
-  filterByRange(rangeStart, rangeEnd, eventList)
+  if(rangeStart && rangeEnd)
+    filterByRange(rangeStart, rangeEnd, eventList)
 
   //Display no result message
   Array.from(eventList).forEach(eventItem => {
@@ -159,6 +161,7 @@ function filterBySearchTerm(searchTerm, eventList, check) {
       icon.onclick = () => {
       emptyArray = suggestions.filter((data) => {
         //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+        console.log(data)
         return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
       });
       emptyArray = emptyArray.map((data) => {
@@ -166,6 +169,7 @@ function filterBySearchTerm(searchTerm, eventList, check) {
         return data = '<li>' + data + '</li>';
       });
       searchWrapper.classList.add("active"); //show autocomplete box
+      console.log(emptyArray);
       showSuggestions(emptyArray);
       let allList = suggBox.querySelectorAll("li");
       for (let i = 0; i < allList.length; i++) {
@@ -181,6 +185,7 @@ function filterBySearchTerm(searchTerm, eventList, check) {
   Array.from(eventList).forEach(eventItem => {
 
     let eventTitle = eventItem.querySelector('.event_title').innerText.toLowerCase()
+    console.log(eventTitle.indexOf(searchTerm));
 
     if (eventTitle.indexOf(searchTerm) == -1) {
       eventItem.style.display = 'none';
@@ -288,33 +293,33 @@ function stringtoDate(dateString){
   }
 }
 
-function convertdate(startdate){
-  // Parse the date string into a Date object
-  const date = new Date(startdate);
+// function convertdate(startdate){
+//   // Parse the date string into a Date object
+//   const date = new Date(startdate);
 
-  // Extract day, month, and year
-  const day = date.getDate();
-  const month = date.getMonth() + 1; // Months are zero-based, so add 1
-  const year = date.getFullYear();
+//   // Extract day, month, and year
+//   const day = date.getDate();
+//   const month = date.getMonth() + 1; // Months are zero-based, so add 1
+//   const year = date.getFullYear();
 
-  // Ensure leading zeros for day and month if needed
-  const formattedDay = day < 10 ? `0${day}` : day;
-  const formattedMonth = month < 10 ? `0${month}` : month;
+//   // Ensure leading zeros for day and month if needed
+//   const formattedDay = day < 10 ? `0${day}` : day;
+//   const formattedMonth = month < 10 ? `0${month}` : month;
 
-  // Create the "dd/mm/yyyy" format
-  const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
-  return formattedDate;
-}
+//   // Create the "dd/mm/yyyy" format
+//   const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
+//   return formattedDate;
+// }
 
-// Function to parse date strings in "dd/mm/yyyy" format
-function parseDate(dateString) {
-  const [day, month, year] = dateString.split('/').map(part => parseInt(part, 10));
-  if (isNaN(day) || isNaN(month) || isNaN(year)) {
-    // Invalid date format, return null
-    return null;
-  }
-  return new Date(year, month - 1, day); // Month is 0-based in JavaScript Date
-}
+// // Function to parse date strings in "dd/mm/yyyy" format
+// function parseDate(dateString) {
+//   const [day, month, year] = dateString.split('/').map(part => parseInt(part, 10));
+//   if (isNaN(day) || isNaN(month) || isNaN(year)) {
+//     // Invalid date format, return null
+//     return null;
+//   }
+//   return new Date(year, month - 1, day); // Month is 0-based in JavaScript Date
+// }
 
 
 
