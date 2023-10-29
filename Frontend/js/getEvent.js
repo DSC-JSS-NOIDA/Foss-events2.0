@@ -258,7 +258,7 @@ function filterByRange(startDate, endDate, eventList) {
     const eed = new Date(eventEndDate);
     const sd = new Date(startDate);
     const ed = new Date(endDate);
-    // console.log(esd,eed,sd,Endevent);
+    console.log(esd,eed,sd,ed);
     // Check if the event falls within the specified date range
     if (sd && ed) {
       if (esd < sd || eed > ed) {
@@ -325,25 +325,25 @@ function stringtoDate(dateString){
 
 
 // Filter by Range
-function filterByRange(rangeStart, rangeEnd, eventList) {
-  Array.from(eventList).forEach(eventItem => {
+// function filterByRange(rangeStart, rangeEnd, eventList) {
+//   Array.from(eventList).forEach(eventItem => {
 
-    let startDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
-    let endDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
+//     let startDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
+//     let endDate = eventItem.querySelector('.date').innerText.split(":", 2)[1];
 
-    startDate = startDate.split("/", 3);
-    startDate = `${startDate[1]}/${startDate[0]}/${startDate[2]}`;
-    startDate = new Date(startDate);
+//     startDate = startDate.split("/", 3);
+//     startDate = `${startDate[1]}/${startDate[0]}/${startDate[2]}`;
+//     startDate = new Date(startDate);
 
-    endDate = endDate.split("/", 3);
-    endDate = `${endDate[1]}/${endDate[0]}/${endDate[2]}`;
-    endDate = new Date(endDate);
+//     endDate = endDate.split("/", 3);
+//     endDate = `${endDate[1]}/${endDate[0]}/${endDate[2]}`;
+//     endDate = new Date(endDate);
 
-    if (!(startDate.getDate() >= rangeStart.getDate() && startDate.getDate() < rangeEnd.getDate() && endDate.getDate() >= rangeStart.getDate() && endDate.getDate() <= rangeEnd.getDate())) {
-      eventItem.style.display = 'none';
-    }
-  });
-}
+//     if (!(startDate.getDate() >= rangeStart.getDate() && startDate.getDate() < rangeEnd.getDate() && endDate.getDate() >= rangeStart.getDate() && endDate.getDate() <= rangeEnd.getDate())) {
+//       eventItem.style.display = 'none';
+//     }
+//   });
+// }
 
 //Scroll to top
 const Top = document.querySelector(".to-top");
