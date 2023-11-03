@@ -129,6 +129,7 @@ html {
 .navbar-collapse {
   justify-content: center;
   padding-right: 10%;
+
   @media screen and (max-width: 767px) {
     padding: 10px 0;
     background-color: #275f64;
@@ -150,12 +151,14 @@ html {
   text-decoration: none;
   font-size: 22px;
   padding: 8px;
+
   @media screen and (max-width: 960px) and (min-width: 768px) {
     font-size: 18px;
     margin: 0;
     padding: 0;
   }
 }
+
 @media screen and (max-width: 768px) {
   .navbar-brand {
     margin: 0;
@@ -184,8 +187,8 @@ html {
   border-radius: 16px;
 }
 
-.custom-switch .custom-control-input ~ .custom-control-label::after,
-.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+.custom-switch .custom-control-input~.custom-control-label::after,
+.custom-switch .custom-control-input:checked~.custom-control-label::after {
   position: absolute;
   background-color: white;
   display: flex;
@@ -201,28 +204,28 @@ html {
   outline: none;
 }
 
-.custom-switch .custom-control-input:not(:checked) ~ .custom-control-label::after {
-  content: "☀";
+.custom-switch .custom-control-input:not(:checked)~.custom-control-label::after {
+  content: "☀️";
   transform: rotate(180deg);
   background-color: #f0f6fc;
 }
 
-.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+.custom-switch .custom-control-input:checked~.custom-control-label::after {
   content: "🌙";
   transform: translateX(100%) !important;
 }
 
-.custom-control-input:focus ~ .custom-control-label::before {
+.custom-control-input:focus~.custom-control-label::before {
   box-shadow: 0 0 0 0rem rgba(0, 0, 0, 0) !important;
   border: 3px solid #134277b2 !important;
 }
 
-.custom-control-input:checked ~ .custom-control-label::before {
+.custom-control-input:checked~.custom-control-label::before {
   background-color: black !important;
   border: 3px solid black !important;
 }
 
-.custom-control-input:active ~ .custom-control-label::before {
+.custom-control-input:active~.custom-control-label::before {
   background-color: #134277b2 !important;
   border: 3px solid #134277b2 !important;
 }
